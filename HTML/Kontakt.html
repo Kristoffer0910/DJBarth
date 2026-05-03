@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJBarth</title>
     <link rel="stylesheet" href="/CSS/Kontakt.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init('nSD__3tY2r74BVLHP');</script>
 </head>
 <body>
     <div class="SvartKonteiner">
@@ -37,9 +39,7 @@
     <h1>Kontaktskjema</h1>
     <p>Fyll ut skjemaet under for å sende en kontaktforespørsel</p>
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="602814b6-5383-4e89-b4dd-7311ff3d3862">
-      <input type="hidden" name="subject" value="Ny kontaktforespørsel fra DJBarth nettside">
+    <form id="kontaktForm">
 
       <div>
         <label for="navn">Navn</label>
@@ -68,7 +68,23 @@
 
       <button class="bookBtn" type="submit">Send melding</button>
     </form>
+    <p id="statusMelding" style="display:none; margin-top:10px;"></p>
   </div>
+
+  <script>
+    document.getElementById('kontaktForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_hf535lk', 'template_0qpqj9h', this)
+        .then(function() {
+          document.getElementById('statusMelding').style.display = 'block';
+          document.getElementById('statusMelding').textContent = 'Melding sendt!';
+          document.getElementById('kontaktForm').reset();
+        }, function() {
+          document.getElementById('statusMelding').style.display = 'block';
+          document.getElementById('statusMelding').textContent = 'Noe gikk galt, prøv igjen.';
+        });
+    });
+  </script>
 
   <footer>
     <div class="footerSection">
