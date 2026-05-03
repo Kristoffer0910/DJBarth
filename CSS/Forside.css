@@ -215,9 +215,11 @@
     margin: 3vw auto 0;
     font-size: 2vw;
     border-radius: 15px;
+    border: 1px solid black;
     padding: 10px;
+    -webkit-appearance: none;
+    appearance: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    
     }
 
 .btnOm{
@@ -225,7 +227,10 @@
     margin: 1vw auto 0;
     font-size: 1.5vw;
     border-radius: 15px;
+    border: 1px solid black;
     padding: 10px;
+    -webkit-appearance: none;
+    appearance: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
@@ -474,9 +479,11 @@ background-color: rgb(124, 123, 128);
 margin: 4vw auto 0;
 font-size: 4vw;
 border-radius: 15px;
-border-color: black;
+border: 1px solid black;
 color: black;
 padding: 10px;
+-webkit-appearance: none;
+appearance: none;
 transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 
 }
@@ -484,11 +491,13 @@ transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s eas
 .btnOm{
 background-color: rgb(126, 125, 134);
 color: black;
-border-color: #030000;
+border: 1px solid #030000;
 margin: 1vw auto 0;
 font-size: 3.5vw;
 border-radius: 15px;
 padding: 10px;
+-webkit-appearance: none;
+appearance: none;
 transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
