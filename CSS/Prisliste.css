@@ -1,0 +1,324 @@
+
+body{
+    font-family: Arial, sans-serif;
+    }
+
+    html {
+        background: radial-gradient(circle, #800080, #090909);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #090909;
+      }
+
+ * {
+    box-sizing: border-box;
+}
+.SvartKonteiner {                 
+    top: 0;
+    left: 0;
+    border: 2px solid #030000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    z-index: 9999;
+    }
+    
+.SvartKonteiner a{
+    color: #ebebeb;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    }
+    
+.SvartKonteiner a:hover {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+#Logo{
+    color: red;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 2vw;
+    }
+
+    .Hamburger {
+        display: none;       /* skjules på PC */
+        font-size: 6vw;
+        background: none;
+        border: none;
+        color: rgb(249, 247, 247);
+        cursor: pointer; 
+        
+    }
+
+    .NavMeny {
+        display: flex;
+        gap: 110px;
+    }
+
+    .DropdownMeny {
+        display: none;                     /* skjult som start */
+        flex-direction: column;
+        background-color:grey;
+        border-top: 2px solid #300000;
+        width: 30vw;
+        padding: 2vw 0;
+        top: 100%;
+        right: 5vw;
+        position: absolute;
+        align-items: center;
+}
+
+    .DropdownMeny a {
+        color: rgb(245, 243, 243);
+        padding: 12px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 3vw;
+       
+}
+
+.DropdownMeny a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.omTekstBox{
+    text-align: center;
+    background: rgb(128, 132, 145);
+    width: 60vw;
+    height: 80vh;
+    padding: 2vw 5vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5%;
+}
+
+.rad3{
+    display: flex;
+    justify-content: center;
+    margin: 10% auto;
+}
+
+.omTekstBox ul{
+    padding-top: 1vh;
+    padding-bottom: 3vh;
+    padding-left: 11vw;
+}
+
+.omTekstBox h2,
+.omTekstBox h3 {
+    text-align: left;
+    padding-left: 10vw;
+}
+
+.btnBooking {
+    background-color: rgb(124, 123, 128);
+    margin: 3vw auto 0;
+    font-size: 1vw;
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    color: black;
+    border: 1.5px solid black;
+}
+
+.btnBooking:hover {
+    transform: translateY(-3px);
+    background-color: rgb(121, 8, 106);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+}
+
+h4{
+    font-size: larger;
+}
+
+li{
+    font-size: larger;
+    text-align: start;
+    }
+
+.footerSection{
+    display: flex; 
+    justify-content: center; 
+ }
+ footer h3{
+     font-size: 2vw;
+     color: rgb(248, 8, 8);
+     display: flex; 
+     margin: 0;
+ }
+ ul{
+    padding: 10%;
+    margin: 0%;
+ }
+ 
+ a {
+    text-decoration: none;
+    color: white;
+ }
+ p{
+    margin: 0;
+ }
+ 
+  .FooterLi{
+    font-size: 1.5vw;
+     display: flex;
+     margin-top: 5vh;
+     justify-content: center;
+     color: white;
+     white-space: nowrap;
+ }
+ 
+ .footerSection .FooterLi a img.instagram{
+     width: 3.5rem;
+     display: block;
+     object-fit: contain;  
+ }
+ 
+ 
+ .footerSection .FooterLi a img.facebook{
+     width: 2rem;
+     display: block;
+     object-fit: contain; 
+    margin-right: 0.5rem;
+    margin-left: 0.4rem; 
+ }
+ 
+ 
+ 
+ .footerSection .FooterLi a{
+     display: flex;          /* gjør at ting legger seg på rad */
+     align-items: center;    /* sentrer vertikalt */
+    
+ }
+
+    @media (max-width: 1000px) {
+
+    body{
+        background-attachment: fixed;
+        margin-top: clamp(80px, 13vh, 120px);
+        }
+        /* Vis hamburger */
+    .Hamburger {
+        display: block;
+    }
+
+    /* Skjul vanlige menylenker i navbar */
+    .NavMeny {
+        display: none;
+    }
+
+    /* Når container har "open", vis dropdown-boksen */
+    .SvartKonteiner.open .DropdownMeny {
+        display: flex;
+    }
+
+    #Logo{
+        font-size: 7vw;
+    }
+
+    .DropdownMeny{
+        width: 30vw;
+    }
+
+    .DropdownMeny a{
+        font-size: 3vw;
+    }
+
+    .rad3{
+    border: 2px solid rgb(15, 14, 14);
+    width: 90%;
+    margin: 40vw auto 0;
+    border-radius: 0;
+  }
+
+  .btnBooking{
+    font-size: 4vw;
+  }
+
+  .omTekstBox{
+    position: static;
+    text-align: center;
+    background: rgb(128, 132, 145);
+    width: 100%;
+    height: 100%;
+    padding: 5vw;
+    transform: none;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+
+    .footerSection{
+        display: flex; 
+        justify-content: center; 
+        margin-top: 40%;
+        }
+        footer h3{
+        font-size: 3.5vw;
+        color: rgb(248, 8, 8);
+        display: flex; 
+        margin: 0;
+        }
+        ul{
+        padding: 4%;
+        }
+        
+        .Meny a{
+        margin-top: 35%;
+        padding: 3%;
+        }
+        .Kontakt p {
+            margin-top: 11%; 
+        }
+        
+        a {
+        text-decoration: none;
+        color: white;
+        }
+        p{
+        margin: 0;
+        }
+        
+        .FooterLi{
+        font-size: 3vw;
+        display: flex;
+        margin-top: 5vh;
+        justify-content: center;
+        color: white;
+        white-space: nowrap;
+        }
+        
+        .footerSection .FooterLi a img.instagram{
+        width: 3.4rem;
+        display: block;
+        object-fit: contain;  
+        }
+        
+        
+        .footerSection .FooterLi a img.facebook{
+        width: 2rem;
+        display: block;
+        object-fit: contain; 
+        margin-right: 0.5rem;
+        margin-left: 0.4rem; 
+        }
+        
+        .footerSection .FooterLi a{
+        display: flex;          /* gjør at ting legger seg på rad */
+        align-items: center;    /* sentrer vertikalt */
+        
+        }
+}
+
+  
+
+
+  

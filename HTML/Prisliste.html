@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJBarth</title>
+    <link rel="stylesheet" href="/CSS/Prisliste.css">
+</head>
+<body>
+     <div class="SvartKonteiner">
+        <div><a href="/HTML/Forside.html" id="Logo">DJBarth</a></div>
+        <nav class="NavMeny">
+        <a href="/HTML/Galleri.html">Galleri</a>
+        <a href="/HTML/Kontakt.html">Kontakt</a>
+        <a href="/HTML/Prisliste.html">Prisliste</a>
+        <a href="/HTML/Om.html">Om</a>
+        </nav>
+        <div><button class="Hamburger">III</button></div>
+        <div class="DropdownMeny">
+            <a href="/HTML/Galleri.html">Galleri</a>
+            <a href="/HTML/Kontakt.html">Kontakt</a>
+            <a href="/HTML/Prisliste.html">Prisliste</a>
+            <a href="/HTML/Om.html">Om</a>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector(".Hamburger");
+        const navbar = document.querySelector(".SvartKonteiner");
+    
+        burger.addEventListener("click", () => {
+            navbar.classList.toggle("open");  
+        });
+    </script>
+
+    <div class="rad3">
+        <div class="kolonne3">
+            <div class="omTekstBox">
+                <h1>Priser</h1>
+                <h4>Prisene nedenfor er veiledende og kan diskuteres ut fra type arrangement og behov</h4> <br> <br>
+                <h2>Inntil 5 timer:</h2>
+                <ul>
+                    <li>Med DJ-utstyr: kr 6 000,-</li> <br>
+                    <li>Med DJ-utstyr og lydutstyr: kr 7 500,- (tillegg for stor PA: kr 1 000,-)</li> <br>
+                    <li>Med DJ-utstyr, lyd og lys: kr 8 500,- (tillegg for stor PA: kr 1 000,-)</li> <br>
+                </ul>
+                <h2>Ved oppdrag utenfor Oslo:</h2>
+                <ul>
+                    <li>Bilgodtgjørelse: kr 4,- per km</li> <br>
+                    <li>Kost og losji på hotell kommer i tillegg</li>
+                </ul>
+                <h4>Ta gjerne kontakt for et uforpliktende tilbud. Prisene er et utgangspunkt, og det meste kan tilpasses</h4>
+                <a href="/HTML/Kontakt.html"><button class="btnBooking">Kontakt</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footerSection">
+            
+            <ul class="Meny">
+                <li class="FooterLi"><h3>Meny</h3></li>
+                <li class="FooterLi"><a href="Forside.html">Hjem</a></li>
+                <li class="FooterLi"><a href="Galleri.html">Galleri</a></li>
+                <li class="FooterLi"><a href="Kontakt.html">Kontakt</a></li>
+                <li class="FooterLi"><a href="Prisliste.html">Prisliste</a></li>
+                <li class="FooterLi"><a href="Om.html">Om</a></li>
+            </ul>
+            
+            <ul class="Kontakt">
+                <li class="FooterLi"><h3>Kontakt</h3></li>
+                <li class="FooterLi"><p>+47 90 53 29 91</p></li>
+                <li class="FooterLi"><p>knuteirik.bartnes@icloud.com</p></li>
+            </ul>
+    
+            <ul>
+                <li class="FooterLi"><h3>Sosiale medier</h3></li>
+                <li class="FooterLi"><a href="https://www.instagram.com/djbarth66?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> <img class="instagram" src="/Bilder/instagram-logo-instagram-icon-transparent-free-png (1).webp" alt=""> Instagram</a></li>
+                <li class="FooterLi"><a href="https://www.facebook.com/profile.php?id=100063523150438"> <img class="facebook" src="/Bilder/facebook-logo-11549681668z1ra1h6mmx.png" alt=""> Facebook</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>
