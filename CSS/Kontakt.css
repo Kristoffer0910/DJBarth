@@ -216,11 +216,18 @@ body{
      
          
      @media (max-width: 1000px) {
-          
+
     body{
         background-attachment: fixed;
         margin-top: clamp(80px, 13vh, 120px);
        }
+
+    html {
+        background: radial-gradient(circle, #E63946, #090909);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #090909;
+    }
      
      .container {
         width: min(90%, 700px);

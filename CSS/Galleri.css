@@ -263,6 +263,13 @@ body{
         background-attachment: fixed;
         margin-top: clamp(80px, 13vh, 120px);
         }
+
+    html {
+        background: radial-gradient(circle, #E63946, #090909);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #090909;
+    }
     .kolonne1 img,
     .kolonne2 img,
     .kolonne3 img,
