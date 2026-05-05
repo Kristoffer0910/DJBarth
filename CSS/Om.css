@@ -1,10 +1,11 @@
 
 body{
     font-family: Arial, sans-serif;
+    color: rgb(16, 16, 16);
     }
 
     html {
-        background: radial-gradient(circle, #800080, #090909);
+        background: radial-gradient(circle, #E63946, #090909);
         background-repeat: no-repeat;
         background-size: cover;
         background-color: #090909;
@@ -13,16 +14,16 @@ body{
  * {
     box-sizing: border-box;
 }
-.SvartKonteiner {                 
+.SvartKonteiner {
     top: 0;
     left: 0;
-    border: 2px solid #030000;
+    border: 2px solid rgb(16, 16, 16);
     padding: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: black;
+    background-color: rgb(16, 16, 16);
     position: fixed;
     z-index: 9999;
     }
@@ -44,7 +45,7 @@ body{
     }
     
 #Logo{
-    color: red;
+    color: #E63946;
     font-family:'Courier New', Courier, monospace;
     font-size: 2vw;
     }
@@ -212,7 +213,7 @@ text-align:start;
  }
  footer h3{
      font-size: 2vw;
-     color: rgb(248, 8, 8);
+     color: #E63946;
      display: flex; 
      margin: 0;
  }
@@ -370,7 +371,7 @@ ul{
     }
 footer h3{
     font-size: 3.5vw;
-    color: rgb(248, 8, 8);
+    color: #E63946;
     display: flex; 
     margin: 0;
     }

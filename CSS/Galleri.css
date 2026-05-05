@@ -4,7 +4,7 @@ body{
     }
 
     html {
-        background: radial-gradient(circle, #800080, #090909);
+        background: radial-gradient(#E63946, #090909);
         background-repeat: no-repeat;
         background-size: cover;
         background-color: #090909;
@@ -16,13 +16,13 @@ body{
 .SvartKonteiner {                 
     top: 0;
     left: 0;
-    border: 2px solid #030000;
+    border: 2px solid  rgb(16, 16, 16);
     padding: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: black;
+    background-color:  rgb(16, 16, 16);
     position: fixed;
     }
     
@@ -43,7 +43,7 @@ body{
     }
     
 #Logo{
-    color: red;
+    color: #E63946;
     font-family:'Courier New', Courier, monospace;
     font-size: 2vw;
     }
@@ -104,8 +104,8 @@ body{
     clear: both;
 }
 .rad1{
-    border: 2px solid ;
-    background-color: rgb(26, 26, 26);
+    border: 2px solid  rgb(16, 16, 16) ;
+    background-color:  rgb(16, 16, 16);
     margin-top: 200px;
     border-radius: 20px;
 }
@@ -126,8 +126,8 @@ body{
 }
 
 .rad2{
-    border: 2px solid ;
-    background-color: rgb(26, 26, 26);
+    border: 2px solid  rgb(16, 16, 16);
+    background-color:  rgb(16, 16, 16);
     margin-top: 100px;
     border-radius: 20px;
 }
@@ -149,8 +149,8 @@ body{
 }
 
 .rad3{
-    border: 2px solid ;
-    background-color: rgb(26, 26, 26);
+    border: 2px solid  rgb(16, 16, 16);
+    background-color:  rgb(16, 16, 16);
     margin-top: 100px;
     border-radius: 20px;
 }
@@ -172,8 +172,8 @@ body{
 }
 
 .rad4{
-    border: 2px solid ;
-    background-color: rgb(26, 26, 26);
+    border: 2px solid  rgb(16, 16, 16);
+    background-color:  rgb(16, 16, 16);
     margin-top: 100px;
     border-radius: 20px;
 }
@@ -195,8 +195,8 @@ body{
 }
 
 .rad5{
-    border: 2px solid ;
-    background-color: rgb(26, 26, 26);
+    border: 2px solid  rgb(16, 16, 16);
+    background-color:  rgb(16, 16, 16);
     margin-top: 100px;
     border-radius: 20px;
 }
@@ -208,7 +208,7 @@ body{
  }
  footer h3{
      font-size: 2vw;
-     color: rgb(248, 8, 8);
+     color: #E63946;
      display: flex; 
      margin: 0;
  }
@@ -322,7 +322,7 @@ body{
         }
         footer h3{
         font-size: 3.5vw;
-        color: rgb(248, 8, 8);
+        color: #E63946;
         display: flex; 
         margin: 0;
         }
