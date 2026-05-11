@@ -158,6 +158,9 @@ li{
     justify-content: center;
     background-color: #161616;
 }
+footer {
+    background-color: #161616;
+}
 footer h3{
     font-size: 2vw;
     color: #ff2d55;
@@ -356,13 +359,13 @@ p{
     }
 
     .footerSection .FooterLi a img.instagram {
-        width: 3.4rem;
+        width: 2.2rem;
         display: block;
         object-fit: contain;
     }
 
     .footerSection .FooterLi a img.facebook {
-        width: 2rem;
+        width: 1.4rem;
         display: block;
         object-fit: contain;
         margin-right: 0.5rem;
