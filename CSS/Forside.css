@@ -585,8 +585,13 @@ p{
 
   .FooterLi {
     font-size: 3vw;
+    display: flex;
+    margin-top: 5vh;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
+    color: #f0f0f0;
+    white-space: nowrap;
   }
 
   .footerSection .FooterLi a img.instagram {
