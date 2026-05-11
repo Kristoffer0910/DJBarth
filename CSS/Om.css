@@ -198,6 +198,8 @@ p{
     display: flex;
     margin-top: 5vh;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
     color: #f0f0f0;
     white-space: nowrap;
 }
@@ -209,11 +211,9 @@ p{
 }
 
 .footerSection .FooterLi a img.facebook{
-    width: 2rem;
+    width: 5.5rem;
     display: block;
     object-fit: contain;
-    margin-right: 0.5rem;
-    margin-left: 0.4rem;
 }
 
 .footerSection .FooterLi a{
@@ -460,11 +460,9 @@ p{
     }
 
     .footerSection .FooterLi a img.facebook {
-        width: 2rem;
+        width: 2.8rem;
         display: block;
         object-fit: contain;
-        margin-right: 0.5rem;
-        margin-left: 0.4rem;
     }
 
     .footerSection .FooterLi a {
