@@ -1,398 +1,389 @@
 body{
+    margin: 0;
     font-family: Arial, sans-serif;
-    color: white;
-    }
+    color: #f0f0f0;
+}
 
-    html {
-        background: radial-gradient(circle, #E63946, #090909);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-color: #090909;
-      }
+html {
+    background-color: #0d0d0d;
+    background-attachment: fixed;
+}
 
-      * {
-        box-sizing: border-box;  
-    }
+* {
+    box-sizing: border-box;
+}
 
-    .SvartKonteiner {
-        top: 0;
-        left: 0;
-        border: 2px solid rgb(16, 16, 16);
-        padding: 20px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        background-color: rgb(16, 16, 16);
-        position: fixed;
-        }
-        
-    .SvartKonteiner a{
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 20px;
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-        border-radius: 5px;
-        font-size: 1.5vw;
-        }
-        
-    .SvartKonteiner a:hover {
-        border-color: #fff;
-        background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-    #Logo{
-        color: #E63946;
-        font-family:'Courier New', Courier, monospace;
-        font-size: 2vw;
-        }
-    
-        .Hamburger {
-            display: none;       /* skjules på PC */
-            font-size: 6vw;
-            background: none;
-            border: none;
-            color: rgb(249, 247, 247);
-            cursor: pointer;  
-        }
-    
-        .NavMeny {
-            display: flex;
-            gap: 110px;
-        }
-    
-        .DropdownMeny {
-            display: none;                     /* skjult som start */
-            flex-direction: column;
-            background-color:grey;
-            border-top: 2px solid #300000;
-            width: 30vw;
-            padding: 2vw 0;
-            top: 100%;
-            right: 5vw;
-            position: absolute;
-            align-items: center;
-            }
-    
-        .DropdownMeny a {
-            color: rgb(245, 243, 243);
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 3vw; 
-            }
-    
-    .DropdownMeny a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        }
+.SvartKonteiner {
+    top: 0;
+    left: 0;
+    border: 2px solid transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: 9999;
+}
 
-  .container {
+.SvartKonteiner a{
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-size: 1.5vw;
+}
+
+.SvartKonteiner a:hover {
+    transform: scale(1.07);
+    color: #00d4ff;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+}
+
+#Logo{
+    color: #00d4ff;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 2vw;
+}
+
+.Hamburger {
+    display: none;
+    font-size: 6vw;
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    cursor: pointer;
+}
+
+.NavMeny {
+    display: flex;
+    gap: 110px;
+}
+
+.DropdownMeny {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 2px solid #ff2d55;
+    width: 30vw;
+    padding: 2vw 0;
+    top: 100%;
+    right: 5vw;
+    position: absolute;
+    align-items: center;
+}
+
+.DropdownMeny a {
+    color: rgb(245, 243, 243);
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+.DropdownMeny a:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+}
+
+.container {
     width: min(90%, 700px);
     margin: 11% auto;
     padding: 24px;
     background: rgb(16, 16, 16);
     border-radius: 16px;
-  }
+    color: white;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.1), 0 0 50px rgba(255, 45, 85, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+}
 
-  h1 {
+h1 {
     margin-top: 0;
     text-align: center;
-    color: #E63946;
+    color: #ff2d55;
     font-size: clamp(2rem, 4vw, 3rem);
-  }
+}
 
-  p {
+p {
     text-align: center;
     line-height: 1.5;
     margin-bottom: 24px;
-  }
+}
 
-  form {
+form {
     display: grid;
     gap: 14px;
-  }
+}
 
-  label {
+label {
     font-weight: bold;
     margin-bottom: 4px;
     display: block;
-  }
+}
 
-  input,
-  textarea,
-  .bookBtn {
+input,
+textarea,
+.bookBtn {
     width: 100%;
     padding: 14px;
     border-radius: 10px;
     border: none;
     font-size: 1rem;
-  }
+}
 
-  input,
-  textarea {
+input,
+textarea {
     background: rgba(255, 255, 255, 0.9);
     color: rgb(16, 16, 16);
-  }
+}
 
-  textarea {
+textarea {
     min-height: 140px;
     resize: vertical;
-  }
+}
 
-  .bookBtn {
-    background: #35d869;
-    color: white;
+.bookBtn {
+    background: transparent;
+    color: #00d4ff;
     font-weight: bold;
     cursor: pointer;
-  }
+    border: 1.5px solid #00d4ff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
 
-  .bookBtn:hover {
-    opacity: 0.9;
-  }
+.bookBtn:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
 
-  .footerSection{
-    display: flex; 
-    justify-content: center; 
- }
- footer h3{
-     font-size: 2vw;
-     color: #E63946;
-     display: flex; 
-     margin: 0;
- }
- ul{
-     padding: 10%;
-     margin: 0%;
- }
- 
- a {
-     text-decoration: none;
-     color: white;
- }
- p{
-     margin: 0;
- }
- 
-  .FooterLi{
+.footerSection{
+    display: flex;
+    justify-content: center;
+    background-color: #161616;
+}
+footer h3{
+    font-size: 2vw;
+    color: #ff2d55;
+    display: flex;
+    margin: 0;
+}
+ul{
+    padding: 10%;
+    margin: 0%;
+}
+
+a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+p{
+    margin: 0;
+}
+
+.FooterLi{
     font-size: 1.5vw;
-     display: flex;
-     margin-top: 5vh;
-     justify-content: center;
-     color: white;
-     white-space: nowrap;
- }
- 
- .footerSection .FooterLi a img.instagram{
-     width: 3.5rem;
-     display: block;
-     object-fit: contain;  
- }
- 
- 
- .footerSection .FooterLi a img.facebook{
-     width: 2rem;
-     display: block;
-     object-fit: contain; 
+    display: flex;
+    margin-top: 5vh;
+    justify-content: center;
+    color: #f0f0f0;
+    white-space: nowrap;
+}
+
+.footerSection .FooterLi a img.instagram{
+    width: 3.5rem;
+    display: block;
+    object-fit: contain;
+}
+
+.footerSection .FooterLi a img.facebook{
+    width: 2rem;
+    display: block;
+    object-fit: contain;
     margin-right: 0.5rem;
-    margin-left: 0.4rem; 
- }
- 
- 
- 
- .footerSection .FooterLi a{
-     display: flex;          /* gjør at ting legger seg på rad */
-     align-items: center;    /* sentrer vertikalt */
-    
- }
+    margin-left: 0.4rem;
+}
 
-  
-     
-         /*kode under til tlf*/
-     
-     
-         
-     
-         
-     @media (max-width: 1000px) {
+.footerSection .FooterLi a{
+    display: flex;
+    align-items: center;
+}
 
-    body{
-        background-attachment: fixed;
-        margin-top: clamp(80px, 13vh, 120px);
-       }
 
+/* Nettbrett: 769px – 1024px */
+@media (max-width: 1024px) {
     html {
-        background: radial-gradient(circle, #E63946, #090909);
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-color: #090909;
+        background: none;
+        background-color: #0d0d0d;
+        background-attachment: scroll;
     }
-     
-     .container {
-        width: min(90%, 700px);
+
+    body {
+        background: transparent;
+        margin-top: clamp(80px, 13vh, 120px);
+    }
+
+    .Hamburger {
+        display: block;
+    }
+
+    .NavMeny {
+        display: none;
+    }
+
+    .SvartKonteiner.open .DropdownMeny {
+        display: flex;
+    }
+
+    #Logo {
+        font-size: 5vw;
+    }
+
+    .DropdownMeny {
+        width: 30vw;
+    }
+
+    .DropdownMeny a {
+        font-size: 2.5vw;
+    }
+
+    footer h3 {
+        font-size: 2.5vw;
+    }
+
+    .FooterLi {
+        font-size: 2vw;
+    }
+
+    .footerSection {
+        background-color: #161616;
+    }
+}
+
+/* Telefon: 0 – 768px */
+@media (max-width: 768px) {
+    html {
+        background: none;
+        background-color: #0d0d0d;
+        background-attachment: scroll;
+    }
+
+    body {
+        background: transparent;
+        margin-top: clamp(80px, 13vh, 120px);
+    }
+
+    .Hamburger {
+        display: block;
+        font-size: 5vw;
+    }
+
+    .NavMeny {
+        display: none;
+    }
+
+    .SvartKonteiner.open .DropdownMeny {
+        display: flex;
+    }
+
+    #Logo {
+        font-size: 5vw;
+    }
+
+    .DropdownMeny {
+        width: 30vw;
+    }
+
+    .DropdownMeny a {
+        font-size: 4vw;
+    }
+
+    .container {
         margin: 120px auto 40px auto;
         padding: 24px;
-        background: rgb(16, 16, 16);
-        border-radius: 16px;
-      }
-    
-      h1 {
-        margin-top: 0;
-        text-align: center;
-        color: #E63946;
-        font-size: clamp(2rem, 4vw, 3rem);
-      }
-    
-      p {
-        text-align: center;
-        line-height: 1.5;
-        margin-bottom: 24px;
-      }
-    
-      form {
-        display: grid;
-        gap: 14px;
-      }
-    
-      label {
-        font-weight: bold;
-        margin-bottom: 4px;
-        display: block;
-      }
+    }
 
-      input[type="date"] {
+    input[type="date"] {
         appearance: inherit;
-        padding: 25px; 
-      }
-    
-      input,
-      textarea,
-      .bookBtn {
+        padding: 25px;
+    }
+
+    input,
+    textarea,
+    .bookBtn {
         width: 100%;
         padding: 14px;
         border-radius: 10px;
-        border: none;
         font-size: 1rem;
         box-sizing: border-box;
-        
-      }
-    
-      input,
-      textarea {
-        background: rgba(255, 255, 255, 0.9);
-        color: rgb(16, 16, 16);
-      }
-    
-      textarea {
-        min-height: 140px;
-        resize: vertical;
-      }
-    
-      .bookBtn {
-        background: #35d869;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    
-      .bookBtn:hover {
-        opacity: 0.9;
-      }
-    
-      /* Vis hamburger */
-     .Hamburger {
-        display: block;
-      }
-      
-      /* Skjul vanlige menylenker i navbar */
-      .NavMeny {
-        display: none;
-      }
-      
-      /* Når container har "open", vis dropdown-boksen */
-      .SvartKonteiner.open .DropdownMeny {
+    }
+
+    .footerSection {
         display: flex;
-      }
-      
-      #Logo{
-        font-size: 7vw;
-      }
-      
-      .DropdownMeny {
-        width: 30vw;
-        }
-      
-      .DropdownMeny a {
-        font-size: 3vw; 
-        }
-     
-     .footerSection{
-     display: flex; 
-     justify-content: center; 
-     margin-top: 40%;
-     }
-     footer h3{
-     font-size: 3.5vw;
-     color: #E63946;
-     display: flex; 
-     margin: 0;
-     }
-     ul{
-     padding: 4%;
-     }
-     
-     .Meny a{
-     margin-top: 35%;
-     padding: 3%;
-     }
-     .Kontakt p {
-         margin-top: 11%; 
-     }
-     
-     a {
-     text-decoration: none;
-     color: white;
-     }
-     p{
-     margin: 0;
-     }
-     
-     .FooterLi{
-     font-size: 3vw;
-     display: flex;
-     margin-top: 5vh;
-     justify-content: center;
-     color: white;
-     white-space: nowrap;
-     }
-     
-     .footerSection .FooterLi a img.instagram{
-     width: 3.4rem;
-     display: block;
-     object-fit: contain;  
-     }
-     
-     
-     .footerSection .FooterLi a img.facebook{
-     width: 2rem;
-     display: block;
-     object-fit: contain; 
-     margin-right: 0.5rem;
-     margin-left: 0.4rem; 
-     }
-     
-     .footerSection .FooterLi a{
-     display: flex;          /* gjør at ting legger seg på rad */
-     align-items: center;    /* sentrer vertikalt */
-     
-     }
-     }
-     
-     
+        justify-content: center;
+        margin-top: 40%;
+        background-color: #161616;
+    }
+    footer h3 {
+        font-size: 3.5vw;
+        color: #ff2d55;
+        display: flex;
+        margin: 0;
+    }
+    ul {
+        padding: 4%;
+    }
 
+    .Meny a {
+        margin-top: 35%;
+        padding: 3%;
+    }
+    .Kontakt p {
+        margin-top: 11%;
+    }
 
-    
+    a {
+        text-decoration: none;
+        color: #f0f0f0;
+    }
+    p {
+        margin: 0;
+    }
 
-    
+    .FooterLi {
+        font-size: 3vw;
+        display: flex;
+        margin-top: 5vh;
+        justify-content: center;
+        color: #f0f0f0;
+        white-space: nowrap;
+    }
+
+    .footerSection .FooterLi a img.instagram {
+        width: 3.4rem;
+        display: block;
+        object-fit: contain;
+    }
+
+    .footerSection .FooterLi a img.facebook {
+        width: 2rem;
+        display: block;
+        object-fit: contain;
+        margin-right: 0.5rem;
+        margin-left: 0.4rem;
+    }
+
+    .footerSection .FooterLi a {
+        display: flex;
+        align-items: center;
+    }
+}
