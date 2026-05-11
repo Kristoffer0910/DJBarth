@@ -2,9 +2,6 @@ body{
     margin: 0;
     font-family: Arial, sans-serif;
     color: #f0f0f0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 html {
@@ -172,11 +169,10 @@ textarea {
 .footerSection{
     display: flex;
     justify-content: center;
-    background-color: #161616;
+    background-color: #111111;
 }
 footer {
-    background-color: #161616;
-    margin-top: auto;
+    background-color: #111111;
 }
 footer h3{
     font-size: 2vw;
@@ -272,7 +268,8 @@ p{
     }
 
     .footerSection {
-        background-color: #161616;
+        background-color: #111111;
+        margin-top: 8%;
     }
 }
 
@@ -338,7 +335,7 @@ p{
         display: flex;
         justify-content: center;
         margin-top: 40%;
-        background-color: #161616;
+        background-color: #111111;
     }
     footer h3 {
         font-size: 3.5vw;
@@ -376,13 +373,13 @@ p{
     }
 
     .footerSection .FooterLi a img.instagram {
-        width: 2.2rem;
+        width: 3.4rem;
         display: block;
         object-fit: contain;
     }
 
     .footerSection .FooterLi a img.facebook {
-        width: 1.4rem;
+        width: 2rem;
         display: block;
         object-fit: contain;
         margin-right: 0.5rem;
