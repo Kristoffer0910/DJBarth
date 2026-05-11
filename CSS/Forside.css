@@ -583,20 +583,18 @@ p{
     padding: 3%;
   }
 
-  .Kontakt p {
-    margin-top: 11%;
-  }
-
   .FooterLi {
     font-size: 3vw;
+    align-items: center;
+    gap: 1rem;
   }
 
   .footerSection .FooterLi a img.instagram {
-    width: 1.9rem;
+    width: 2.5rem;
   }
 
   .footerSection .FooterLi a img.facebook {
-    width: 5rem;
+    width: 4rem;
   }
 }
 

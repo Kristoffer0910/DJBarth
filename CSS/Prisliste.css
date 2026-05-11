@@ -338,10 +338,6 @@ p{
         margin-top: 35%;
         padding: 3%;
     }
-    .Kontakt p {
-        margin-top: 11%;
-    }
-
     a {
         text-decoration: none;
         color: #f0f0f0;
@@ -355,18 +351,20 @@ p{
         display: flex;
         margin-top: 5vh;
         justify-content: center;
+        align-items: center;
+        gap: 1rem;
         color: #f0f0f0;
         white-space: nowrap;
     }
 
     .footerSection .FooterLi a img.instagram {
-        width: 1.9rem;
+        width: 2.5rem;
         display: block;
         object-fit: contain;
     }
 
     .footerSection .FooterLi a img.facebook {
-        width: 5rem;
+        width: 4rem;
         display: block;
         object-fit: contain;
     }
