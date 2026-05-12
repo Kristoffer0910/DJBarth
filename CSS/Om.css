@@ -7,7 +7,7 @@ body{
 }
 
 html {
-    background-color: #1a1a1a;
+    background: transparent;
     background-attachment: fixed;
 }
 
@@ -231,7 +231,7 @@ p{
     }
 
     body {
-        background-color: #1a1a1a;
+        background: transparent;
         margin-top: clamp(80px, 13vh, 120px);
     }
 
@@ -334,7 +334,7 @@ p{
     }
 
     body {
-        background-color: #1a1a1a;
+        background: transparent;
         margin-top: clamp(80px, 13vh, 120px);
     }
 
