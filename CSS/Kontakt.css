@@ -267,9 +267,12 @@ p{
         font-size: 2vw;
     }
 
+    footer {
+        padding-top: 8%;
+    }
+
     .footerSection {
         background-color: #222222;
-        margin-top: 8%;
     }
 }
 
@@ -331,10 +334,13 @@ p{
         box-sizing: border-box;
     }
 
+    footer {
+        padding-top: 40%;
+    }
+
     .footerSection {
         display: flex;
         justify-content: center;
-        margin-top: 40%;
         background-color: #222222;
     }
     footer h3 {
