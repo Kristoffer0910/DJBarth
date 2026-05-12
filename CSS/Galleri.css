@@ -270,9 +270,6 @@ p{
     body {
         background: transparent;
         margin-top: clamp(80px, 13vh, 120px);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
     }
 
     .Hamburger {
@@ -307,12 +304,9 @@ p{
         font-size: 2vw;
     }
 
-    footer {
-        margin-top: auto;
-    }
-
     .footerSection {
         background-color: #222222;
+        margin-top: 8%;
     }
 }
 
@@ -327,9 +321,6 @@ p{
     body {
         background: transparent;
         margin-top: clamp(80px, 13vh, 120px);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
     }
 
     .Hamburger {
@@ -385,11 +376,8 @@ p{
     .footerSection {
         display: flex;
         justify-content: center;
+        margin-top: 40%;
         background-color: #222222;
-    }
-
-    footer {
-        margin-top: auto;
     }
     footer h3 {
         font-size: 3.5vw;
