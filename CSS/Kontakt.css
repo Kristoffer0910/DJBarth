@@ -211,7 +211,7 @@ p{
 }
 
 .footerSection .FooterLi a img.facebook{
-    width: 4.5rem;
+    width: 4rem;
     display: block;
     object-fit: contain;
 }
@@ -377,7 +377,7 @@ p{
     }
 
     .footerSection .FooterLi a img.facebook {
-        width: 3rem;
+        width: 2.5rem;
         display: block;
         object-fit: contain;
     }
