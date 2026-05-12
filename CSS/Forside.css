@@ -311,7 +311,7 @@ p{
 @media (max-width: 1024px) {
   html {
     background: none;
-    background-color: #222222;
+    background-color: #1a1a1a;
     background-attachment: scroll;
   }
 
@@ -434,7 +434,7 @@ p{
 @media (max-width: 768px) {
   html {
     background: none;
-    background-color: #222222;
+    background-color: #1a1a1a;
     background-attachment: scroll;
   }
 
