@@ -205,13 +205,13 @@ p{
 }
 
 .footerSection .FooterLi a img.instagram{
-    width: 3.5rem;
+    width: 2.5rem;
     display: block;
     object-fit: contain;
 }
 
 .footerSection .FooterLi a img.facebook{
-    width: 5.5rem;
+    width: 4.5rem;
     display: block;
     object-fit: contain;
 }
@@ -452,13 +452,13 @@ p{
     }
 
     .footerSection .FooterLi a img.instagram {
-        width: 2.5rem;
+        width: 1.5rem;
         display: block;
         object-fit: contain;
     }
 
     .footerSection .FooterLi a img.facebook {
-        width: 4rem;
+        width: 3rem;
         display: block;
         object-fit: contain;
     }
