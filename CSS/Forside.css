@@ -424,6 +424,10 @@ p{
     background-color: #222222;
     margin-top: 8%;
   }
+
+  footer {
+    padding-bottom: 60px;
+  }
 }
 
 /* Telefon: 0 – 768px */
@@ -568,6 +572,10 @@ p{
     justify-content: center;
     margin-top: 40%;
     background-color: #222222;
+  }
+
+  footer {
+    padding-bottom: 60px;
   }
 
   footer h3 {
