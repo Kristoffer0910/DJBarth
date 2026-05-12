@@ -231,7 +231,7 @@ p{
     }
 
     body {
-        background: transparent;
+        background-color: #1a1a1a;
         margin-top: clamp(80px, 13vh, 120px);
     }
 
@@ -330,7 +330,7 @@ p{
     }
 
     body {
-        background: transparent;
+        background-color: #1a1a1a;
         margin-top: clamp(80px, 13vh, 120px);
     }
 
