@@ -5,7 +5,7 @@ body{
 }
 
 html {
-    background-color: #0d0d0d;
+    background-color: #1a1a1a;
     background-attachment: fixed;
 }
 
@@ -22,7 +22,7 @@ html {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: rgba(13, 13, 13, 0.6);
+    background-color: rgba(26, 26, 26, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: fixed;
@@ -69,7 +69,7 @@ html {
 .DropdownMeny {
     display: none;
     flex-direction: column;
-    background-color: rgba(13, 13, 13, 0.95);
+    background-color: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-top: 2px solid #ff2d55;
@@ -206,10 +206,10 @@ html {
 .footerSection{
     display: flex;
     justify-content: center;
-    background-color: #111111;
+    background-color: #222222;
 }
 footer {
-    background-color: #111111;
+    background-color: #222222;
 }
 footer h3{
     font-size: 2vw;
@@ -263,7 +263,7 @@ p{
 @media (max-width: 1024px) {
     html {
         background: none;
-        background-color: #0d0d0d;
+        background-color: #1a1a1a;
         background-attachment: scroll;
     }
 
@@ -305,7 +305,7 @@ p{
     }
 
     .footerSection {
-        background-color: #111111;
+        background-color: #222222;
         margin-top: 8%;
     }
 }
@@ -314,7 +314,7 @@ p{
 @media (max-width: 768px) {
     html {
         background: none;
-        background-color: #0d0d0d;
+        background-color: #1a1a1a;
         background-attachment: scroll;
     }
 
@@ -325,7 +325,7 @@ p{
 
     .Hamburger {
         display: block;
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     .NavMeny {
@@ -337,7 +337,7 @@ p{
     }
 
     #Logo {
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     .DropdownMeny {
@@ -377,7 +377,7 @@ p{
         display: flex;
         justify-content: center;
         margin-top: 40%;
-        background-color: #111111;
+        background-color: #222222;
     }
     footer h3 {
         font-size: 3.5vw;
