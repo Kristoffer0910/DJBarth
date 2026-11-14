@@ -44,9 +44,10 @@
                 Nettleseren din støtter ikke video.
             </video>
             <script>
-                /* Sørger for at videoen faktisk starter. Noen nettlesere (f.eks. iPhone i
-                   strømsparingsmodus) stopper autoavspilling; da prøver vi igjen ved første
-                   berøring/scroll, og når fanen blir synlig igjen. */
+                /* Sørger for at videoen faktisk starter på både PC og mobil. Noen nettlesere
+                   stopper autoavspilling (f.eks. iPhone i strømsparingsmodus eller PC-nettlesere
+                   med strenge innstillinger); da prøver vi igjen ved første museflytt, klikk,
+                   berøring eller scroll, og når fanen blir synlig igjen. */
                 (function () {
                     var v = document.getElementById("forsideVideo");
                     if (!v) return;
@@ -57,7 +58,7 @@
                     }
                     spill();
                     v.addEventListener("canplay", spill, { once: true });
-                    ["touchstart", "click", "scroll", "keydown"].forEach(function (e) {
+                    ["touchstart", "click", "scroll", "keydown", "mousemove", "wheel"].forEach(function (e) {
                         window.addEventListener(e, function start() {
                             if (v.paused) spill();
                             window.removeEventListener(e, start);
@@ -67,6 +68,16 @@
                         if (!document.hidden && v.paused) spill();
                     });
                     window.addEventListener("pageshow", function () { if (v.paused) spill(); });
+                    /* Sikkerhetsnett (PC og mobil): sjekk jevnlig de første sekundene om
+                       videoen står fast, og prøv å starte den på nytt. */
+                    var forsok = 0;
+                    var vakt = setInterval(function () {
+                        forsok++;
+                        if (!v.paused && v.currentTime > 0) { clearInterval(vakt); return; }
+                        if (v.readyState === 0 && forsok === 4) v.load();
+                        spill();
+                        if (forsok >= 10) clearInterval(vakt);
+                    }, 1000);
                 })();
             </script>
             
