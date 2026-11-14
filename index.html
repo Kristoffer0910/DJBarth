@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJBarth</title>
     <link rel="stylesheet" href="/CSS/Forside.css?v=10">
+    <link rel="stylesheet" href="/CSS/ForsideForslag.css?v=1">
     <script src="/JS/Scrolleffekt.js"></script>
 </head>
-<body>
+<body class="forslag">
      <div class="SvartKonteiner">
         <div><a href="/" id="Logo">DJBarth</a></div>
         <nav class="NavMeny">
@@ -34,90 +35,163 @@
         });
     </script>
 
-    <div class="logoBilde">
-            <img src="/Bilder/IMG_1737.jpeg">
-    </div>
+    <!-- 1. Toppfelt med video i full bredde -->
+    <section class="hero">
+    <video id="forsideVideo" autoplay muted loop playsinline preload="auto" poster="/Bilder/DjVideo-poster.jpg" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" oncontextmenu="return false;">
+        <source src="/Bilder/DjVideo.mp4" type="video/mp4">
+        Nettleseren din støtter ikke video.
+    </video>
+    <script>
+        /* Sørger for at videoen starter automatisk på både PC og mobil.
+           Noen ganger blokkerer nettleseren autoavspilling (f.eks. iPhone/Mac i
+           strømsparingsmodus). Da byttes videoen ut med et <img> som peker på samme
+           MP4-fil – Safari spiller slike av automatisk, som en GIF, også i strømsparing.
+           Nettlesere som ikke støtter det beholder videoen, som da starter ved første
+           museflytt, klikk, berøring eller scroll. */
+        (function () {
+            var v = document.getElementById("forsideVideo");
+            if (!v) return;
+            v.muted = true;
+            var byttet = false;
 
-     <div class="rad1">
-        <div class="kolonne1">
-            <video id="forsideVideo" autoplay muted loop playsinline preload="auto" poster="/Bilder/DjVideo-poster.jpg" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" oncontextmenu="return false;">
-                <source src="/Bilder/DjVideo.mp4" type="video/mp4">
-                Nettleseren din støtter ikke video.
-            </video>
-            <script>
-                /* Sørger for at videoen starter automatisk på både PC og mobil.
-                   Noen ganger blokkerer nettleseren autoavspilling (f.eks. iPhone/Mac i
-                   strømsparingsmodus). Da byttes videoen ut med et <img> som peker på samme
-                   MP4-fil – Safari spiller slike av automatisk, som en GIF, også i strømsparing.
-                   Nettlesere som ikke støtter det beholder videoen, som da starter ved første
-                   museflytt, klikk, berøring eller scroll. */
-                (function () {
-                    var v = document.getElementById("forsideVideo");
-                    if (!v) return;
-                    v.muted = true;
-                    var byttet = false;
+            function byttTilBilde() {
+                if (byttet) return;
+                byttet = true;
+                var img = new Image();
+                img.className = "videoErstatning";
+                img.alt = "";
+                img.setAttribute("aria-hidden", "true");
+                img.onload = function () {
+                    if (!v.paused && v.currentTime > 0) return;
+                    v.parentNode.replaceChild(img, v);
+                };
+                img.src = v.currentSrc || "/Bilder/DjVideo.mp4";
+            }
 
-                    function byttTilBilde() {
-                        if (byttet) return;
-                        byttet = true;
-                        var img = new Image();
-                        img.className = "videoErstatning";
-                        img.alt = "";
-                        img.setAttribute("aria-hidden", "true");
-                        img.onload = function () {
-                            if (!v.paused && v.currentTime > 0) return;
-                            v.parentNode.replaceChild(img, v);
-                        };
-                        img.src = v.currentSrc || "/Bilder/DjVideo.mp4";
-                    }
+            function spill() {
+                var p = v.play();
+                if (p && p.catch) p.catch(function (e) {
+                    if (e && e.name === "NotAllowedError") byttTilBilde();
+                });
+            }
 
-                    function spill() {
-                        var p = v.play();
-                        if (p && p.catch) p.catch(function (e) {
-                            if (e && e.name === "NotAllowedError") byttTilBilde();
-                        });
-                    }
+            spill();
+            v.addEventListener("canplay", spill, { once: true });
 
-                    spill();
-                    v.addEventListener("canplay", spill, { once: true });
+            /* Står videoen fortsatt stille etter litt, prøv bildet-trikset uansett. */
+            setTimeout(function () {
+                if (v.paused || v.currentTime === 0) { spill(); byttTilBilde(); }
+            }, 2500);
 
-                    /* Står videoen fortsatt stille etter litt, prøv bildet-trikset uansett. */
-                    setTimeout(function () {
-                        if (v.paused || v.currentTime === 0) { spill(); byttTilBilde(); }
-                    }, 2500);
-
-                    ["touchstart", "click", "scroll", "keydown", "mousemove", "wheel"].forEach(function (e) {
-                        window.addEventListener(e, function start() {
-                            if (v.paused) spill();
-                            window.removeEventListener(e, start);
-                        }, { passive: true });
-                    });
-                    document.addEventListener("visibilitychange", function () {
-                        if (!document.hidden && v.paused) spill();
-                    });
-                    window.addEventListener("pageshow", function () { if (v.paused) spill(); });
-                })();
-            </script>
-            
-            <div class="gjennomsiktigBorder">
-                <h1 class="storOverskrift reveal">DJ opplevelse tilpasset ditt event!</h1>
-                <a class="revealLenke reveal" href="/kontakt/"><button class="btnBooking">Kontakt</button></a>
+            ["touchstart", "click", "scroll", "keydown", "mousemove", "wheel"].forEach(function (e) {
+                window.addEventListener(e, function start() {
+                    if (v.paused) spill();
+                    window.removeEventListener(e, start);
+                }, { passive: true });
+            });
+            document.addEventListener("visibilitychange", function () {
+                if (!document.hidden && v.paused) spill();
+            });
+            window.addEventListener("pageshow", function () { if (v.paused) spill(); });
+        })();
+    </script>
+        <div class="heroToning"></div>
+        <div class="heroInnhold">
+            <p class="heroEtikett reveal">DJ for bryllup, firmafest og privatfest · Oslo og hele landet</p>
+            <h1 class="heroTittel reveal">DJ-opplevelse tilpasset <span>ditt event</span></h1>
+            <p class="heroIngress reveal">Fra rolig lounge til fullt dansegulv – med erfaring helt fra 90-tallets klubbscene til festivaler og store arrangementer.</p>
+            <div class="knappeRad reveal">
+                <a class="knapp knappFylt" href="/kontakt/">Be om tilbud</a>
+                <a class="knapp knappKant" href="/prisliste/">Se priser</a>
             </div>
         </div>
-    </div>
+        <a class="scrollHint" href="#erfaring" aria-label="Scroll ned"><span></span></a>
+    </section>
 
-    <div class="rad2 reveal">
-        <div class="kolonne2">
-            <img src="/Bilder/IMG_6328.jpg">
-            <div class="omTekstBox">
-                <h2 class="Overskrift reveal">Om DJBarth</h2>
-                <p class="Tekst reveal">DJBarth er en erfaren og allsidig DJ med lang fartstid fra klubber, eventer, bryllup og firmaarrangementer over hele landet. Han tilpasser musikken til publikum og skaper riktig stemning fra rolig lounge til fullt dansegulv.</p>
-                <a class="revealLenke reveal" href="/om/"><button class="btnOm">Les mer om DJBarth</button></a>
-            </div>
+    <!-- 2. Erfaring i tall -->
+    <section class="faktaStripe" id="erfaring">
+        <div class="fakta reveal"><strong>90-tallet</strong><span>bak DJ-pulten siden</span></div>
+        <div class="fakta reveal"><strong>2013</strong><span>fast DJ for DNB siden</span></div>
+        <div class="fakta reveal"><strong>6 år</strong><span>på Nobels fredspris</span></div>
+        <div class="fakta reveal"><strong>24 t</strong><span>sammenhengende på Styrkeprøven</span></div>
+    </section>
+
+    <!-- 3. Om DJBarth -->
+    <section class="seksjon omDelt">
+        <div class="omBildeRamme reveal">
+            <img src="/Bilder/IMG_6328.jpg" alt="DJBarth bak DJ-pulten på en terrasse">
         </div>
-    </div>
+        <div class="omTekst">
+            <p class="seksjonEtikett reveal">Om DJBarth</p>
+            <h2 class="seksjonTittel reveal">En DJ som leser rommet</h2>
+            <p class="reveal">DJBarth er en erfaren og allsidig DJ med lang fartstid fra klubber, eventer, bryllup og firmaarrangementer over hele landet. Han tilpasser musikken til publikum og skaper riktig stemning – fra rolig lounge til fullt dansegulv.</p>
+            <p class="reveal">Har spilt sammen med blant andre Madcon, DeLillos, Karpe og Donkeyboy.</p>
+            <a class="tekstLenke reveal" href="/om/">Les mer om DJBarth <span aria-hidden="true">→</span></a>
+        </div>
+    </section>
 
-    
+    <!-- 4. Hva jeg tilbyr -->
+    <section class="seksjon">
+        <p class="seksjonEtikett midtstilt reveal">Arrangementer</p>
+        <h2 class="seksjonTittel midtstilt reveal">Riktig musikk til hver anledning</h2>
+        <div class="tilbudGrid">
+            <article class="tilbudKort reveal">
+                <span class="kortNr">01</span>
+                <h3>Bryllup</h3>
+                <p>Fra middag og første dans til en dansegulv-finale gjestene husker lenge.</p>
+            </article>
+            <article class="tilbudKort reveal">
+                <span class="kortNr">02</span>
+                <h3>Firmafest</h3>
+                <p>Trygg erfaring fra store firmaarrangementer, blant annet som fast DJ for DNB.</p>
+            </article>
+            <article class="tilbudKort reveal">
+                <span class="kortNr">03</span>
+                <h3>Bursdag og privatfest</h3>
+                <p>Musikk tilpasset gjestene, med lyd og utstyr for både små og store lokaler.</p>
+            </article>
+            <article class="tilbudKort reveal">
+                <span class="kortNr">04</span>
+                <h3>Klubb og bar</h3>
+                <p>Fast DJ på Tordenskjold Pub i Oslo og med røtter i norsk klubbkultur.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- 5. Smakebit fra galleriet -->
+    <section class="seksjon">
+        <div class="seksjonTopp">
+            <div>
+                <p class="seksjonEtikett reveal">Galleri</p>
+                <h2 class="seksjonTittel reveal">Fra oppdragene</h2>
+            </div>
+            <a class="tekstLenke reveal" href="/galleri/">Se hele galleriet <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="galleriSmak">
+            <a class="reveal stor" href="/galleri/"><img src="/Bilder/IMG_3747.JPG" alt="DJBarth på et stort arrangement"></a>
+            <a class="reveal" href="/galleri/"><img src="/Bilder/IMG_1045.jpeg" alt="DJBarth på oppdrag"></a>
+            <a class="reveal" href="/galleri/"><img src="/Bilder/IMG_6349.jpg" alt="DJBarth på oppdrag"></a>
+            <a class="reveal" href="/galleri/"><img src="/Bilder/IMG_0641.jpeg" alt="DJBarth bak DJ-pulten"></a>
+            <a class="reveal" href="/galleri/"><img src="/Bilder/IMG_6933.jpeg" alt="DJBarth på oppdrag"></a>
+        </div>
+    </section>
+
+    <!-- 6. Sitat -->
+    <blockquote class="forslagSitat reveal">
+        <p>«Målet er alltid at publikum skal ha en god opplevelse fra første sang til siste beat.»</p>
+        <cite>– DJBarth</cite>
+    </blockquote>
+
+    <!-- 7. Avslutning med booking -->
+    <section class="bookingBand reveal">
+        <h2>Klar for å booke?</h2>
+        <p>DJ-oppdrag inntil 5 timer fra 6 000 kr. Ta kontakt for et uforpliktende tilbud.</p>
+        <div class="knappeRad">
+            <a class="knapp knappFylt" href="/kontakt/">Kontakt DJBarth</a>
+            <a class="knapp knappKant" href="tel:+4790532991">Ring 905 32 991</a>
+        </div>
+    </section>
+
     <footer>
         <div class="footerSection">
             <ul class="Kontakt">
@@ -135,3 +209,5 @@
             </ul>
         </div>
     </footer>
+</body>
+</html>
