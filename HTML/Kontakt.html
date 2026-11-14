@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJBarth</title>
-    <link rel="stylesheet" href="/CSS/Kontakt.css?v=8">
+    <link rel="stylesheet" href="/CSS/Kontakt.css?v=9">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>emailjs.init('nSD__3tY2r74BVLHP');</script>
 </head>
@@ -43,17 +43,17 @@
 
       <div>
         <label for="navn">Navn</label>
-        <input type="text" id="navn" name="Navn" required>
+        <input type="text" id="navn" name="Navn" placeholder="Ola Nordmann" autocomplete="name" required>
       </div>
 
       <div>
         <label for="epost">E-post</label>
-        <input type="email" id="epost" name="E-post" required>
+        <input type="email" id="epost" name="E-post" placeholder="navn@eksempel.no" autocomplete="email" required>
       </div>
 
       <div>
         <label for="telefon">Telefonnummer</label>
-        <input type="tel" id="telefon" name="Telefonnummer" required>
+        <input type="tel" id="telefon" name="Telefonnummer" placeholder="+47 000 00 000" autocomplete="tel" required>
       </div>
 
       <div>
@@ -63,7 +63,7 @@
 
       <div>
         <label for="info">Info om hendelsen</label>
-        <textarea id="info" name="Info om hendelsen" required></textarea>
+        <textarea id="info" name="Info om hendelsen" placeholder="Type arrangement, sted, antall gjester …" required></textarea>
       </div>
 
       <button class="bookBtn" type="submit">Send melding</button>
