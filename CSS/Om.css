@@ -640,6 +640,126 @@ p{
     }
 }
 
+/* ---------- Telefon: nytt oppsett for toppen av Om-siden (alt over sitatet) ---------- */
+@media (max-width: 768px) {
+    /* Mindre tomrom øverst (body har allerede margin-top for menyen) */
+    body {
+        padding-top: 0;
+    }
+
+    .SideTopp {
+        padding: 28px 6% 8px;
+    }
+
+    .SideTittel {
+        font-size: 2rem;
+    }
+
+    .SideIngress {
+        font-size: 0.95rem;
+        margin-top: 12px;
+    }
+
+    .omIntro {
+        gap: 0;
+        margin: 24px 0 36px;
+    }
+
+    /* Bildet får mer høyde og glir over i teksten under */
+    .omIntro .omBilde {
+        aspect-ratio: 4 / 5;
+        border-radius: 14px;
+        box-shadow: none;
+        -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+    }
+
+    /* Intro-teksten uten tung boks */
+    .omIntro .omKort {
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0 4px;
+        margin-top: -48px;
+        position: relative;
+    }
+
+    .omIntro .Overskrift {
+        font-size: 1.6rem;
+        margin-bottom: 14px;
+    }
+
+    .omIntro .Tekst.ingress {
+        font-size: 1.15rem;
+        border-left: 3px solid #ff2d55;
+        padding-left: 14px;
+        margin-bottom: 18px;
+    }
+
+    .omIntro .Tekst {
+        color: #cfcfcf;
+        font-size: 1rem;
+    }
+
+    /* Kjennetegn som en tidslinje i stedet for tre store kort */
+    .omKjennetegn {
+        position: relative;
+        gap: 28px;
+        margin: 0 0 8px;
+        padding-left: 52px;
+    }
+
+    .omKjennetegn::before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: linear-gradient(to bottom, #00d4ff, rgba(255, 45, 85, 0.6));
+        opacity: 0.5;
+    }
+
+    .omKjennetegn .omKort {
+        position: relative;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .omKjennetegn .omKort.synlig:hover {
+        transform: none;
+    }
+
+    .omKjennetegn .kortNummer {
+        position: absolute;
+        left: -52px;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #1a1a1a;
+        border: 1.5px solid #ff2d55;
+        font-size: 0.8rem;
+        letter-spacing: 0;
+    }
+
+    .omKjennetegn .Underoverskrift {
+        font-size: 1.1rem;
+        margin: 6px 0 8px;
+    }
+
+    .omKjennetegn .Tekst {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #cfcfcf;
+    }
+}
+
 /* Fyll området under footeren (Safari sin verktøylinje/overscroll) med footerfargen,
    mens toppen av siden beholder den mørke bakgrunnen. Må ligge sist i filen. */
 html {
