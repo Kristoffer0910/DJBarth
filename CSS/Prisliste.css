@@ -126,6 +126,59 @@ html {
     padding-left: 10vw;
 }
 
+.omTekstBox h1 {
+    color: #00d4ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.PrisTabell {
+    max-width: 700px;
+    margin: 3rem auto 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.PrisRad {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1.2rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 45, 85, 0.25);
+    text-align: left;
+}
+
+.PrisRad:first-child {
+    border-top: 1px solid rgba(255, 45, 85, 0.25);
+}
+
+.PrisNavn {
+    font-size: 1.3rem;
+    color: #f0f0f0;
+}
+
+.PrisBelop {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00d4ff;
+    white-space: nowrap;
+}
+
+.PrisNotater {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(240, 240, 240, 0.75);
+    line-height: 1.6;
+}
+
+.PrisNotater p {
+    margin: 0.3rem 0;
+}
+
 .btnBooking {
     background-color: transparent;
     margin: 3vw auto 0;
@@ -263,6 +316,11 @@ p{
     footer {
         padding-bottom: 60px;
     }
+
+    .PrisNavn,
+    .PrisBelop {
+        font-size: 1.2rem;
+    }
 }
 
 /* Telefon: 0 – 768px */
@@ -311,6 +369,38 @@ p{
 
     .btnBooking {
         font-size: 4vw;
+    }
+
+    .omTekstBox h1 {
+        font-size: 2rem;
+    }
+
+    .omTekstBox h4 {
+        font-size: 1rem;
+    }
+
+    .PrisTabell {
+        margin: 2rem auto 1.5rem;
+    }
+
+    .PrisRad {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        padding: 1rem 0.3rem;
+    }
+
+    .PrisNavn {
+        font-size: 1rem;
+    }
+
+    .PrisBelop {
+        font-size: 1.1rem;
+    }
+
+    .PrisNotater {
+        font-size: 0.9rem;
+        text-align: left;
     }
 
     .omTekstBox {
