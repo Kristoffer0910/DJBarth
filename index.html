@@ -39,10 +39,36 @@
 
      <div class="rad1">
         <div class="kolonne1">
-            <video autoplay muted loop playsinline>
-                <source src="/Bilder/DjVideo.mov" type="video/mp4">
+            <video id="forsideVideo" autoplay muted loop playsinline preload="auto" poster="/Bilder/DjVideo-poster.jpg" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" oncontextmenu="return false;">
+                <source src="/Bilder/DjVideo.mp4" type="video/mp4">
                 Nettleseren din støtter ikke video.
             </video>
+            <script>
+                /* Sørger for at videoen faktisk starter. Noen nettlesere (f.eks. iPhone i
+                   strømsparingsmodus) stopper autoavspilling; da prøver vi igjen ved første
+                   berøring/scroll, og når fanen blir synlig igjen. */
+                (function () {
+                    var v = document.getElementById("forsideVideo");
+                    if (!v) return;
+                    v.muted = true;
+                    function spill() {
+                        var p = v.play();
+                        if (p && p.catch) p.catch(function () {});
+                    }
+                    spill();
+                    v.addEventListener("canplay", spill, { once: true });
+                    ["touchstart", "click", "scroll", "keydown"].forEach(function (e) {
+                        window.addEventListener(e, function start() {
+                            if (v.paused) spill();
+                            window.removeEventListener(e, start);
+                        }, { passive: true });
+                    });
+                    document.addEventListener("visibilitychange", function () {
+                        if (!document.hidden && v.paused) spill();
+                    });
+                    window.addEventListener("pageshow", function () { if (v.paused) spill(); });
+                })();
+            </script>
             
             <div class="gjennomsiktigBorder">
                 <h1 class="storOverskrift">DJ opplevelse tilpasset ditt event!</h1>
@@ -55,9 +81,9 @@
         <div class="kolonne2">
             <img src="/Bilder/IMG_6328.jpg">
             <div class="omTekstBox">
-                <h2 class="Overskrift">Om DJ Barth</h2>
-                <p class="Tekst">DJ Barth er en erfaren og allsidig DJ med lang fartstid fra klubber, eventer, bryllup og firmaarrangementer over hele landet. Han tilpasser musikken til publikum og skaper riktig stemning fra rolig lounge til fullt dansegulv.</p>
-                <a href="/HTML/Om.html"><button class="btnOm">Les mer om DJ Barth</button></a>
+                <h2 class="Overskrift">Om DJBarth</h2>
+                <p class="Tekst">DJBarth er en erfaren og allsidig DJ med lang fartstid fra klubber, eventer, bryllup og firmaarrangementer over hele landet. Han tilpasser musikken til publikum og skaper riktig stemning fra rolig lounge til fullt dansegulv.</p>
+                <a href="/HTML/Om.html"><button class="btnOm">Les mer om DJBarth</button></a>
             </div>
         </div>
     </div>
