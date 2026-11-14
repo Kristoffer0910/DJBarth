@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJBarth</title>
+    <link rel="stylesheet" href="/CSS/Om.css?v=9">
+    <script src="/JS/Scrolleffekt.js"></script>
+</head>
+<body>
+     <div class="SvartKonteiner">
+        <div><a href="/" id="Logo">DJBarth</a></div>
+        <nav class="NavMeny">
+        <a href="/galleri/">Galleri</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/prisliste/">Prisliste</a>
+        <a href="/om/">Om</a>
+        </nav>
+        <div><button class="Hamburger">III</button></div>
+        <div class="DropdownMeny">
+            <a href="/galleri/">Galleri</a>
+            <a href="/kontakt/">Kontakt</a>
+            <a href="/prisliste/">Prisliste</a>
+            <a href="/om/">Om</a>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector(".Hamburger");
+        const navbar = document.querySelector(".SvartKonteiner");
+    
+        burger.addEventListener("click", () => {
+            navbar.classList.toggle("open");  
+        });
+    </script>
+
+    <header class="SideTopp reveal">
+        <h1 class="SideTittel">Om DJBarth</h1>
+        <p class="SideIngress">DJ med lang erfaring fra norsk klubb- og eventkultur</p>
+    </header>
+
+    <main class="omInnhold">
+
+        <section class="omIntro">
+            <img class="omBilde reveal" src="/Bilder/IMG_0641.jpeg" alt="DJBarth bak DJ-pulten">
+            <div class="omKort reveal">
+                <h2 class="Overskrift">Hvem er DJBarth?</h2>
+                <p class="Tekst ingress">Knut Eirik Bartnes, bedre kjent som DJBarth, er en DJ med lang erfaring fra norsk klubb og eventkultur.</p>
+                <p class="Tekst">Gjennom mange år har han spilt på alt fra intime barer og lokale klubbkvelder, til større festivaler og arrangementer spredt rundt i hele landet. Han har bygget seg opp en solid bakgrunn og et godt rykte som en DJ du kan stole på, uansett type arrangement.</p>
+            </div>
+        </section>
+
+        <section class="omKjennetegn">
+            <div class="omKort reveal">
+                <span class="kortNummer">01</span>
+                <h3 class="Underoverskrift">Leser stemningen i rommet</h3>
+                <p class="Tekst">Det som virkelig kjennetegner DJBarth er evnen til å lese stemningen i rommet. Han er oppmerksom på publikum og tilpasser musikken etter hvordan kvelden utvikler seg. Han vet når det er tid for å løfte energien og få folk opp på dansegulvet, og når situasjonen heller kaller på noe roligere og mer avslappet.</p>
+            </div>
+            <div class="omKort reveal">
+                <span class="kortNummer">02</span>
+                <h3 class="Underoverskrift">Passer til alle anledninger</h3>
+                <p class="Tekst">Denne forståelsen for stemning gjør at han passer like godt til en avslappet loungekveld som til en fullpakket festkveld.</p>
+            </div>
+            <div class="omKort reveal">
+                <span class="kortNummer">03</span>
+                <h3 class="Underoverskrift">Musikk med en baktanke</h3>
+                <p class="Tekst">DJBarth behersker et bredt spekter av musikksjangere og setter alltid sammen spillelistene sine med en baktanke. Han jobber bevisst med hvordan musikken utvikler seg gjennom kvelden, og sørger for at energien bygges på en naturlig og god måte.</p>
+            </div>
+        </section>
+
+        <blockquote class="omSitat reveal">
+            <p>«Målet er alltid at publikum skal ha en god opplevelse fra første sang til siste beat.»</p>
+        </blockquote>
+
+        <section class="omDel">
+            <div class="omKort reveal">
+                <h2 class="Overskrift">Oppdrag og samarbeid</h2>
+                <ul class="omListe">
+                    <li>Nærmest «resident DJ» for DNB på deres arrangementer siden 2013</li>
+                    <li>En av DJ-ene på Tordenskjold Pub i Oslo</li>
+                    <li>Spiller mye i private anledninger som bursdager og bryllup</li>
+                    <li>Har vært DJ sammen med kjente artister som Madcon, DeLillos, Karpe, Donkeyboy og Lustans Lakeijer m.fl.</li>
+                    <li>Reiser til Svalbard etter nyttår for DJ-oppdrag i Longyearbyen (Hurtigruta)</li>
+                </ul>
+            </div>
+            <img class="omBilde reveal" src="/Bilder/IMG_6933.jpeg" alt="DJBarth på oppdrag">
+        </section>
+
+        <section class="omEvents">
+            <div class="eventsTopp">
+                <img class="omBilde reveal" src="/Bilder/IMG_3747.JPG" alt="DJBarth på et stort arrangement">
+                <h2 class="Overskrift reveal">Store DJ-events</h2>
+            </div>
+            <div class="eventsListe">
+                <article class="eventKort reveal">
+                    <span class="eventAar">90-tallet</span>
+                    <p class="Tekst">Var med å starte opp og DJ-e på electronicaklubben Stretch – en av Norges første electronicaklubber, som huset DJ Tiësto, Armin van Buuren og Robert Miles</p>
+                </article>
+                <article class="eventKort reveal">
+                    <span class="eventAar">2007–2012</span>
+                    <p class="Tekst">Nobels fredspris i Oslo Rådhus</p>
+                </article>
+                <article class="eventKort reveal">
+                    <span class="eventAar">2015</span>
+                    <p class="Tekst">DJ i 24 timer i forbindelse med målgang for sykkelrittet Den Store Styrkeprøven</p>
+                </article>
+                <article class="eventKort reveal">
+                    <span class="eventAar">2024</span>
+                    <p class="Tekst">DNB Sommerfest på Akershus Festning i samarbeid med Alex Rosen</p>
+                </article>
+                <article class="eventKort reveal">
+                    <p class="Tekst">Åpning av DNB Bjørvika med DeLillos, Karpe og Donkeyboy</p>
+                </article>
+                <article class="eventKort reveal">
+                    <p class="Tekst">DJ under åpning og etterfesten på Støperiet Scene Tønsberg (konsert med Lustans Lakeijer)</p>
+                </article>
+                <article class="eventKort reveal">
+                    <p class="Tekst">DJ på Støtvik hotell sammen med artisten Chris Medina</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+
+<footer>
+    <div class="footerSection">
+        
+        <ul class="Kontakt">
+            <li class="FooterLi"><h3>Kontakt</h3></li>
+            <li class="FooterLi"><p>+47 90 53 29 91</p></li>
+            <li class="FooterLi"><p>knuteirik.bartnes@icloud.com</p></li>
+        </ul>
+
+        <ul>
+            <li class="FooterLi"><h3>Sosiale medier</h3></li>
+            <li class="FooterLi">
+                <a href="https://www.instagram.com/djbarth66?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="instagram" src="/Bilder/instagram-white-icon.webp" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100063523150438"><img class="facebook" src="/Bilder/facebook-logo-png-white-facebook-logo-png-white-facebook-icon-png--32.png" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</footer>
+    
+    
+</body>
+</html>

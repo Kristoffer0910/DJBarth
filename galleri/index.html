@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Galleri.css?v=8">
+    <script src="/JS/Scrolleffekt.js"></script>
+    <title>Galleri</title>
+</head>
+<body>
+    <div class="SvartKonteiner">
+        <div><a href="/" id="Logo">DJBarth</a></div>
+        <nav class="NavMeny">
+        <a href="/galleri/">Galleri</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/prisliste/">Prisliste</a>
+        <a href="/om/">Om</a>
+        </nav>
+        <div><button class="Hamburger">III</button></div>
+        <div class="DropdownMeny">
+            <a href="/galleri/">Galleri</a>
+            <a href="/kontakt/">Kontakt</a>
+            <a href="/prisliste/">Prisliste</a>
+            <a href="/om/">Om</a>
+        </div>
+    </div>
+
+    <header class="SideTopp reveal">
+        <h1 class="SideTittel">Galleri</h1>
+        <p class="SideIngress">Bilder fra oppdrag og arrangementer</p>
+    </header>
+
+    <main class="galleri">
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 1 i stor størrelse">
+            <img src="/Bilder/IMG_1045.jpeg" alt="DJBarth på oppdrag, bilde 1" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 2 i stor størrelse">
+            <img src="/Bilder/IMG_1861.jpg" alt="DJBarth på oppdrag, bilde 2" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 3 i stor størrelse">
+            <img src="/Bilder/IMG_1043.jpeg" alt="DJBarth på oppdrag, bilde 3" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 4 i stor størrelse">
+            <img src="/Bilder/IMG_2494.jpeg" alt="DJBarth på oppdrag, bilde 4" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 5 i stor størrelse">
+            <img src="/Bilder/IMG_6349.jpg" alt="DJBarth på oppdrag, bilde 5" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 6 i stor størrelse">
+            <img src="/Bilder/IMG_0627.jpeg" alt="DJBarth på oppdrag, bilde 6" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 7 i stor størrelse">
+            <img src="/Bilder/IMG_0082.jpeg" alt="DJBarth på oppdrag, bilde 7" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 8 i stor størrelse">
+            <img src="/Bilder/IMG_5751.jpeg" alt="DJBarth på oppdrag, bilde 8" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 9 i stor størrelse">
+            <img src="/Bilder/IMG_1046.jpeg" alt="DJBarth på oppdrag, bilde 9" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 10 i stor størrelse">
+            <img src="/Bilder/IMG_3754.JPG" alt="DJBarth på oppdrag, bilde 10" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 11 i stor størrelse">
+            <img src="/Bilder/IMG_3762.jpg" alt="DJBarth på oppdrag, bilde 11" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 12 i stor størrelse">
+            <img src="/Bilder/IMG_3746.JPG" alt="DJBarth på oppdrag, bilde 12" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 13 i stor størrelse">
+            <img src="/Bilder/IMG_3750.jpg" alt="DJBarth på oppdrag, bilde 13" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 14 i stor størrelse">
+            <img src="/Bilder/IMG_3749.JPG" alt="DJBarth på oppdrag, bilde 14" loading="lazy">
+        </button>
+        <button class="galleriBilde reveal" type="button" aria-label="Vis bilde 15 i stor størrelse">
+            <img src="/Bilder/IMG_3763.jpg" alt="DJBarth på oppdrag, bilde 15" loading="lazy">
+        </button>
+    </main>
+
+    <div class="Lysboks" aria-hidden="true">
+        <button class="LysboksLukk" type="button" aria-label="Lukk">&times;</button>
+        <img class="LysboksBilde" src="" alt="">
+    </div>
+
+    <script>
+        const lysboks = document.querySelector(".Lysboks");
+        const lysboksBilde = document.querySelector(".LysboksBilde");
+
+        document.querySelectorAll(".galleriBilde").forEach((knapp) => {
+            knapp.addEventListener("click", () => {
+                const bilde = knapp.querySelector("img");
+                lysboksBilde.src = bilde.src;
+                lysboksBilde.alt = bilde.alt;
+                lysboks.classList.add("aapen");
+                lysboks.setAttribute("aria-hidden", "false");
+            });
+        });
+
+        function lukkLysboks() {
+            lysboks.classList.remove("aapen");
+            lysboks.setAttribute("aria-hidden", "true");
+        }
+
+        lysboks.addEventListener("click", (e) => {
+            if (e.target !== lysboksBilde) lukkLysboks();
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") lukkLysboks();
+        });
+    </script>
+
+    <script>
+        const burger = document.querySelector(".Hamburger");
+        const navbar = document.querySelector(".SvartKonteiner");
+    
+        burger.addEventListener("click", () => {
+            navbar.classList.toggle("open");  
+        });
+    </script>
+
+<footer>
+    <div class="footerSection">
+        
+        
+        
+        <ul class="Kontakt">
+            <li class="FooterLi"><h3>Kontakt</h3></li>
+            <li class="FooterLi"><p>+47 90 53 29 91</p></li>
+            <li class="FooterLi"><p>knuteirik.bartnes@icloud.com</p></li>
+        </ul>
+
+        <ul>
+            <li class="FooterLi"><h3>Sosiale medier</h3></li>
+            <li class="FooterLi">
+                <a href="https://www.instagram.com/djbarth66?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="instagram" src="/Bilder/instagram-white-icon.webp" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100063523150438"><img class="facebook" src="/Bilder/facebook-logo-png-white-facebook-logo-png-white-facebook-icon-png--32.png" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</footer>
+    
+</body>
+</html>

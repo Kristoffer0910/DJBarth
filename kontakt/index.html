@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJBarth</title>
+    <link rel="stylesheet" href="/CSS/Kontakt.css?v=9">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init('nSD__3tY2r74BVLHP');</script>
+</head>
+<body>
+    <div class="SvartKonteiner">
+        <div><a href="/" id="Logo">DJBarth</a></div>
+        <nav class="NavMeny">
+        <a href="/galleri/">Galleri</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/prisliste/">Prisliste</a>
+        <a href="/om/">Om</a>
+        </nav>
+        <div><button class="Hamburger">III</button></div>
+        <div class="DropdownMeny">
+            <a href="/galleri/">Galleri</a>
+            <a href="/kontakt/">Kontakt</a>
+            <a href="/prisliste/">Prisliste</a>
+            <a href="/om/">Om</a>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector(".Hamburger");
+        const navbar = document.querySelector(".SvartKonteiner");
+
+        burger.addEventListener("click", () => {
+            navbar.classList.toggle("open");
+        });
+    </script>
+
+<div class="container">
+    <h1>Kontaktskjema</h1>
+    <p>Fyll ut skjemaet under for å sende en kontaktforespørsel</p>
+
+    <form id="kontaktForm">
+
+      <div>
+        <label for="navn">Navn</label>
+        <input type="text" id="navn" name="Navn" placeholder="Ola Nordmann" autocomplete="name" required>
+      </div>
+
+      <div>
+        <label for="epost">E-post</label>
+        <input type="email" id="epost" name="E-post" placeholder="navn@eksempel.no" autocomplete="email" required>
+      </div>
+
+      <div>
+        <label for="telefon">Telefonnummer</label>
+        <input type="tel" id="telefon" name="Telefonnummer" placeholder="+47 000 00 000" autocomplete="tel" required>
+      </div>
+
+      <div>
+        <label for="dato">Dato for hendelsen</label>
+        <input type="date" id="dato" name="Dato for hendelsen" required>
+      </div>
+
+      <div>
+        <label for="info">Info om hendelsen</label>
+        <textarea id="info" name="Info om hendelsen" placeholder="Type arrangement, sted, antall gjester …" required></textarea>
+      </div>
+
+      <button class="bookBtn" type="submit">Send melding</button>
+    </form>
+    <p id="statusMelding" style="display:none; margin-top:10px;"></p>
+  </div>
+
+  <script>
+    document.getElementById('kontaktForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_hf535lk', 'template_js1wijx', this)
+        .then(function() {
+          document.getElementById('statusMelding').style.display = 'block';
+          document.getElementById('statusMelding').textContent = 'Melding sendt!';
+          document.getElementById('kontaktForm').reset();
+        }, function() {
+          document.getElementById('statusMelding').style.display = 'block';
+          document.getElementById('statusMelding').textContent = 'Noe gikk galt, prøv igjen.';
+        });
+    });
+  </script>
+
+  <footer>
+    <div class="footerSection">
+
+        <ul class="Kontakt">
+            <li class="FooterLi"><h3>Kontakt</h3></li>
+            <li class="FooterLi"><p>+47 90 53 29 91</p></li>
+            <li class="FooterLi"><p>knuteirik.bartnes@icloud.com</p></li>
+        </ul>
+
+        <ul>
+            <li class="FooterLi"><h3>Sosiale medier</h3></li>
+            <li class="FooterLi">
+                <a href="https://www.instagram.com/djbarth66?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="instagram" src="/Bilder/instagram-white-icon.webp" alt=""></a>
+                <a href="https://www.facebook.com/profile.php?id=100063523150438"><img class="facebook" src="/Bilder/facebook-logo-png-white-facebook-logo-png-white-facebook-icon-png--32.png" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+
+</body>
+</html>

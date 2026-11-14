@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJBarth</title>
+    <link rel="stylesheet" href="/CSS/Prisliste.css?v=8">
+</head>
+<body>
+     <div class="SvartKonteiner">
+        <div><a href="/" id="Logo">DJBarth</a></div>
+        <nav class="NavMeny">
+        <a href="/galleri/">Galleri</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/prisliste/">Prisliste</a>
+        <a href="/om/">Om</a>
+        </nav>
+        <div><button class="Hamburger">III</button></div>
+        <div class="DropdownMeny">
+            <a href="/galleri/">Galleri</a>
+            <a href="/kontakt/">Kontakt</a>
+            <a href="/prisliste/">Prisliste</a>
+            <a href="/om/">Om</a>
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector(".Hamburger");
+        const navbar = document.querySelector(".SvartKonteiner");
+    
+        burger.addEventListener("click", () => {
+            navbar.classList.toggle("open");  
+        });
+    </script>
+
+    <div class="rad3">
+        <div class="kolonne3">
+            <div class="omTekstBox">
+                <h1>Priser</h1>
+                <h4>Prisene nedenfor er veiledende og kan diskuteres ut fra type arrangement og behov</h4>
+
+                <div class="PrisTabell">
+                    <div class="PrisRad">
+                        <span class="PrisNavn">DJ-oppdrag inntil 5 timer</span>
+                        <span class="PrisBelop">6 000,- kr</span>
+                    </div>
+                    <div class="PrisRad">
+                        <span class="PrisNavn">Påløpte timer utover avtale</span>
+                        <span class="PrisBelop">1 260,- kr pr/t</span>
+                    </div>
+                    <div class="PrisRad">
+                        <span class="PrisNavn">Høytalerpakke liten</span>
+                        <span class="PrisBelop">1 000,- kr</span>
+                    </div>
+                    <div class="PrisRad">
+                        <span class="PrisNavn">Høytalerpakke stor</span>
+                        <span class="PrisBelop">3 500,- kr</span>
+                    </div>
+                </div>
+
+                <div class="PrisNotater">
+                    <p>Opp-/nedrigg kommer som tillegg.</p>
+                    <p>Ved oppdrag utenfor Oslo omegn avtales priser for reise/oppmøte, samt evt. kost og losji.</p>
+                </div>
+
+                <h4>Ta gjerne kontakt for et uforpliktende tilbud. Prisene er et utgangspunkt, og det meste kan tilpasses</h4>
+                <a href="/kontakt/"><button class="btnBooking">Kontakt</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footerSection">
+            
+            <ul class="Kontakt">
+                <li class="FooterLi"><h3>Kontakt</h3></li>
+                <li class="FooterLi"><p>+47 90 53 29 91</p></li>
+                <li class="FooterLi"><p>knuteirik.bartnes@icloud.com</p></li>
+            </ul>
+    
+            <ul>
+                <li class="FooterLi"><h3>Sosiale medier</h3></li>
+                <li class="FooterLi">
+                    <a href="https://www.instagram.com/djbarth66?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img class="instagram" src="/Bilder/instagram-white-icon.webp" alt=""></a>
+                    <a href="https://www.facebook.com/profile.php?id=100063523150438"><img class="facebook" src="/Bilder/facebook-logo-png-white-facebook-logo-png-white-facebook-icon-png--32.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>
