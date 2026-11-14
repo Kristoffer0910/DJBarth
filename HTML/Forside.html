@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJBarth</title>
-    <link rel="stylesheet" href="/CSS/Forside.css?v=8">
+    <link rel="stylesheet" href="/CSS/Forside.css?v=9">
 </head>
 <body>
      <div class="SvartKonteiner">
@@ -44,20 +44,47 @@
                 Nettleseren din støtter ikke video.
             </video>
             <script>
-                /* Sørger for at videoen faktisk starter på både PC og mobil. Noen nettlesere
-                   stopper autoavspilling (f.eks. iPhone i strømsparingsmodus eller PC-nettlesere
-                   med strenge innstillinger); da prøver vi igjen ved første museflytt, klikk,
-                   berøring eller scroll, og når fanen blir synlig igjen. */
+                /* Sørger for at videoen starter automatisk på både PC og mobil.
+                   Noen ganger blokkerer nettleseren autoavspilling (f.eks. iPhone/Mac i
+                   strømsparingsmodus). Da byttes videoen ut med et <img> som peker på samme
+                   MP4-fil – Safari spiller slike av automatisk, som en GIF, også i strømsparing.
+                   Nettlesere som ikke støtter det beholder videoen, som da starter ved første
+                   museflytt, klikk, berøring eller scroll. */
                 (function () {
                     var v = document.getElementById("forsideVideo");
                     if (!v) return;
                     v.muted = true;
+                    var byttet = false;
+
+                    function byttTilBilde() {
+                        if (byttet) return;
+                        byttet = true;
+                        var img = new Image();
+                        img.className = "videoErstatning";
+                        img.alt = "";
+                        img.setAttribute("aria-hidden", "true");
+                        img.onload = function () {
+                            if (!v.paused && v.currentTime > 0) return;
+                            v.parentNode.replaceChild(img, v);
+                        };
+                        img.src = v.currentSrc || "/Bilder/DjVideo.mp4";
+                    }
+
                     function spill() {
                         var p = v.play();
-                        if (p && p.catch) p.catch(function () {});
+                        if (p && p.catch) p.catch(function (e) {
+                            if (e && e.name === "NotAllowedError") byttTilBilde();
+                        });
                     }
+
                     spill();
                     v.addEventListener("canplay", spill, { once: true });
+
+                    /* Står videoen fortsatt stille etter litt, prøv bildet-trikset uansett. */
+                    setTimeout(function () {
+                        if (v.paused || v.currentTime === 0) { spill(); byttTilBilde(); }
+                    }, 2500);
+
                     ["touchstart", "click", "scroll", "keydown", "mousemove", "wheel"].forEach(function (e) {
                         window.addEventListener(e, function start() {
                             if (v.paused) spill();
@@ -68,16 +95,6 @@
                         if (!document.hidden && v.paused) spill();
                     });
                     window.addEventListener("pageshow", function () { if (v.paused) spill(); });
-                    /* Sikkerhetsnett (PC og mobil): sjekk jevnlig de første sekundene om
-                       videoen står fast, og prøv å starte den på nytt. */
-                    var forsok = 0;
-                    var vakt = setInterval(function () {
-                        forsok++;
-                        if (!v.paused && v.currentTime > 0) { clearInterval(vakt); return; }
-                        if (v.readyState === 0 && forsok === 4) v.load();
-                        spill();
-                        if (forsok >= 10) clearInterval(vakt);
-                    }, 1000);
                 })();
             </script>
             
