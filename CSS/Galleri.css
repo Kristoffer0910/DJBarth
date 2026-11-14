@@ -95,113 +95,161 @@ html {
     text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
 }
 
-.kolonne1 img{
-    float: left;
-    width: 33.33%;
-    height: auto;
-    padding: 50px;
-    aspect-ratio: 3 / 3;
-    object-fit: cover;
+/* ---------- Felles scrolleffekt (lik på Om og Galleri) ---------- */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.rad1::after {
+.js .reveal.synlig {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ---------- Sidetopp (lik på Om og Galleri) ---------- */
+.SideTopp {
+    text-align: center;
+    padding: clamp(110px, 12vw, 160px) 5% 2vw;
+}
+
+.SideTittel {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #00d4ff;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.SideTittel::after {
     content: "";
-    display: table;
-    clear: both;
-}
-.rad1{
-    border: 2px solid rgb(16, 16, 16);
-    background-color: rgb(16, 16, 16);
-    margin-top: 200px;
-    border-radius: 20px;
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #ff2d55;
+    margin: 16px auto 0;
 }
 
-.kolonne2 img{
-    float: left;
-    width: 33.33%;
+.SideIngress {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
+    color: #f0f0f0;
+    opacity: 0.8;
+    margin-top: 16px;
+}
+
+/* ---------- Galleri (masonry-rutenett) ---------- */
+.galleri {
+    width: 85%;
+    max-width: 1400px;
+    margin: 3vw auto 8%;
+    column-count: 3;
+    column-gap: 24px;
+}
+
+.galleriBilde {
+    display: block;
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 0;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    background: rgba(26, 26, 26, 0.8);
+    cursor: zoom-in;
+    overflow: hidden;
+    border-radius: 8px;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+.galleriBilde img {
+    display: block;
+    width: 100%;
     height: auto;
-    padding: 50px;
-    aspect-ratio: 3 / 3;
-    object-fit: cover;
+    border-radius: 7px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.9);
 }
 
-.rad2::after {
-    content: "";
-    display: table;
-    clear: both;
+.galleriBilde,
+.js .galleriBilde.reveal {
+    transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.rad2{
-    border: 2px solid rgb(16, 16, 16);
-    background-color: rgb(16, 16, 16);
-    margin-top: 100px;
-    border-radius: 20px;
+.galleriBilde:hover,
+.galleriBilde:focus-visible {
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.2), 0 0 50px rgba(255, 45, 85, 0.1);
+    border-color: rgba(0, 212, 255, 0.4);
+    outline: none;
 }
 
-.kolonne3 img{
-    float: left;
-    width: 33.33%;
-    height: auto;
-    padding: 50px;
-    aspect-ratio: 3 / 3;
-    object-fit: cover;
+.galleriBilde:hover img,
+.galleriBilde:focus-visible img {
+    transform: scale(1.05);
+    filter: brightness(1);
 }
 
-.rad3::after {
-    content: "";
-    display: table;
-    clear: both;
+/* ---------- Lysboks (stort bilde ved klikk) ---------- */
+.Lysboks {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-.rad3{
-    border: 2px solid rgb(16, 16, 16);
-    background-color: rgb(16, 16, 16);
-    margin-top: 100px;
-    border-radius: 20px;
+.Lysboks.aapen {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.kolonne4 img{
-    float: left;
-    width: 33.33%;
-    height: auto;
-    padding: 50px;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+.LysboksBilde {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.2), 0 0 50px rgba(255, 45, 85, 0.1);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
 }
 
-.rad4::after {
-    content: "";
-    display: table;
-    clear: both;
+.Lysboks.aapen .LysboksBilde {
+    transform: scale(1);
 }
 
-.rad4{
-    border: 2px solid rgb(16, 16, 16);
-    background-color: rgb(16, 16, 16);
-    margin-top: 100px;
-    border-radius: 20px;
+.LysboksLukk {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    border: 1.5px solid #ff2d55;
+    color: #ff2d55;
+    border-radius: 15px;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, text-shadow 0.2s ease;
 }
 
-.kolonne5 img{
-    float: left;
-    width: 33.33%;
-    height: auto;
-    padding: 50px;
-    aspect-ratio: 3 / 3;
-    object-fit: cover;
-}
-
-.rad5::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.rad5{
-    border: 2px solid rgb(16, 16, 16);
-    background-color: rgb(16, 16, 16);
-    margin-top: 100px;
-    border-radius: 20px;
+.LysboksLukk:hover {
+    transform: scale(1.01);
+    text-shadow: 0 0 4px #ff2d55;
+    box-shadow: 0 0 4px #ff2d55;
 }
 
 .footerSection{
@@ -297,6 +345,20 @@ p{
         font-size: 2.5vw;
     }
 
+    .galleri {
+        width: 90%;
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    .galleriBilde {
+        margin-bottom: 20px;
+    }
+
+    .SideTopp {
+        padding-top: 4vw;
+    }
+
     footer h3 {
         font-size: 2.5vw;
     }
@@ -353,29 +415,23 @@ p{
         font-size: 4vw;
     }
 
-    .kolonne1 img,
-    .kolonne2 img,
-    .kolonne3 img,
-    .kolonne4 img,
-    .kolonne5 img {
-        float: none;
-        width: 100%;
-        display: block;
-        height: auto;
-        padding: 5vw;
+    .galleri {
+        width: 92%;
+        column-count: 2;
+        column-gap: 12px;
     }
 
-    .rad1 {
-        width: 80%;
-        margin: 0 auto;
+    .galleriBilde {
+        margin-bottom: 12px;
     }
-    .rad2,
-    .rad3,
-    .rad4,
-    .rad5 {
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 0%;
+
+    .SideTopp {
+        padding: 8vw 5% 4vw;
+    }
+
+    .LysboksLukk {
+        top: 16px;
+        right: 16px;
     }
 
     .footerSection {
