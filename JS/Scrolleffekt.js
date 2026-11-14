@@ -1,4 +1,4 @@
-/* Felles scrolleffekt for Om- og Galleri-siden.
+/* Felles scrolleffekt for forsiden, Om- og Galleri-siden.
    Elementer med klassen "reveal" glir inn og tones opp når de kommer inn i bildet.
    Lastes i <head> slik at "js"-klassen settes før siden tegnes (unngår blinking). */
 

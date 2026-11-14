@@ -641,3 +641,28 @@ body {
     background-color: #222222;
     background-image: linear-gradient(#1a1a1a, #1a1a1a);
 }
+
+/* ---------- Felles scrolleffekt (lik på forsiden, Om og Galleri) ---------- */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .reveal.synlig {
+    opacity: 1;
+    transform: none;
+}
+
+/* Lenkene rundt knappene må være blokk-elementer for at glidningen skal virke */
+.revealLenke {
+    display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
