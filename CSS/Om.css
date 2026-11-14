@@ -639,3 +639,13 @@ p{
         align-items: center;
     }
 }
+
+/* Fyll området under footeren (Safari sin verktøylinje/overscroll) med footerfargen,
+   mens toppen av siden beholder den mørke bakgrunnen. Må ligge sist i filen. */
+html {
+    background: linear-gradient(#1a1a1a, #1a1a1a) top / 100% 50% no-repeat, #222222;
+}
+
+body {
+    background-color: #1a1a1a;
+}
