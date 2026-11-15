@@ -40,6 +40,9 @@ html:has(.forslag) {
     height: 100%;
     object-fit: cover;
     pointer-events: none;
+    /* Uskarp video så ansikter ikke kjennes igjen. Skaleres litt opp så kantene ikke blir lyse. */
+    filter: blur(14px);
+    transform: scale(1.1);
 }
 
 .heroToning {
@@ -54,7 +57,26 @@ html:has(.forslag) {
     position: relative;
     width: min(1200px, 88%);
     margin: 0 auto;
-    padding-bottom: 14vh;
+    padding-bottom: 28vh;
+    text-align: center;
+}
+
+.heroInnhold .heroEtikett {
+    margin: 20px 0 0;
+}
+
+.heroInnhold .heroTittel {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heroInnhold .heroIngress {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heroInnhold .knappeRad {
+    justify-content: center;
 }
 
 .heroEtikett,
@@ -359,7 +381,7 @@ html:has(.forslag) {
 /* ---------- Mobil ---------- */
 @media (max-width: 700px) {
     .heroInnhold {
-        padding-bottom: 16vh;
+        padding-bottom: 24vh;
     }
 
     .heroEtikett {
