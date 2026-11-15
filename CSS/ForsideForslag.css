@@ -8,13 +8,17 @@
     --bla: #00d4ff;
     --rosa: #ff2d55;
     --strek: rgba(255, 255, 255, 0.08);
-    background: var(--bakgrunn);
+    /* Safari farger bunnlinja/overscroll etter body sin background-color,
+       så den settes til footerfargen. Selve flaten males mørk med et bakgrunnsbilde. */
+    background-color: #222222;
+    background-image: linear-gradient(var(--bakgrunn), var(--bakgrunn));
     color: var(--tekst);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Fyll området under footeren med footerfargen, mørk bakgrunn øverst */
 html:has(.forslag) {
-    background-color: #141414;
+    background: linear-gradient(#141414, #141414) top / 100% 50% no-repeat, #222222;
     scroll-behavior: smooth;
 }
 
