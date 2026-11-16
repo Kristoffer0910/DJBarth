@@ -41,8 +41,8 @@ html:has(.forslag) {
     object-fit: cover;
     pointer-events: none;
     /* Uskarp video så ansikter ikke kjennes igjen. Skaleres litt opp så kantene ikke blir lyse. */
-    filter: blur(9px);
-    transform: scale(1.06);
+    filter: blur(6px);
+    transform: scale(1.04);
 }
 
 .heroToning {
